@@ -1,0 +1,1 @@
+Un var peux e^tre interchangeable alors qu'une val est fixe une fois que défini
