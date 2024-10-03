@@ -15,6 +15,9 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var listeButtons : List<Button>
 
+    var scoreTops = 0
+    var scoreFlops = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
@@ -37,6 +40,11 @@ class MainActivity : AppCompatActivity() {
             binding.btn8,
             binding.btn9,
             )
+        for(btn  in listeButtons){
+            btn.setOnClickListener(View.OnClickListener {
+                reactClick(it)
+            })
+        }
         initialiser()
         }
 
@@ -52,7 +60,23 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-        fun reactClick(){
+        fun reactClick(it: View){
+            //détecter si le boutton appuyé est le lapin
+            val boutonClicked : Button = it as Button
+            if(boutonClicked.text == "Lapin"){
+                boutonClicked.setText("Taupe")
+                initialiser()
+                scoreTops++
+            }else{
+                scoreFlops++
+                //sinon perdre un point
+
+            }
+            //mettre a jour l'affichage du score
+            binding.tvTops.setText("Tops: $scoreTops")
+            binding.tvTops.setText("Flops: $scoreFlops")
+
+            //bouger les lapins
 
         }
     }
