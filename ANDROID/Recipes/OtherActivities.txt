@@ -1,0 +1,16 @@
+Démarrer une activité
+Le cas typique pour démarrer une activité est en réagissant à l'appui sur un bouton.
+
+Nous sommes dans une activité quelconque.
+On désire démarrer l'activité nommée AutreActivity.
+// On réagit au clic sur un bouton
+binding.btnMonBouton.setOnClickListener {
+    // On crée l'intent, qui a besoin :
+    // 1. Du contexte actuel
+    // 2. De la classe d'activité à démarrer. 
+    val intent = Intent(this, AutreActivity::class.java)
+
+    // On démarre l'activité en lui passant l'intent qu'on vient de créer.
+    startActivity(intent)
+}
+-----
