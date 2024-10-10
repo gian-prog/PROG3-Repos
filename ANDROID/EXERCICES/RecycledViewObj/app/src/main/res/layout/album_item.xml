@@ -4,7 +4,9 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp"
-    android:layout_marginBottom="150dp">  <!-- Espacement entre chaque élément -->
+    android:layout_marginBottom="150dp"
+    android:id="@+id/lyt"
+    >  <!-- Espacement entre chaque élément -->
 
 
     <TextView

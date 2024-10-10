@@ -1,10 +1,12 @@
 package com.example.recycledview.adapters
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recycledview.DetailActivity
 import com.example.recycledview.databinding.AlbumItemBinding
 import com.example.recycledview.models.Album
 
@@ -16,6 +18,13 @@ class AlbumAdapter : ListAdapter<Album, AlbumAdapter.AlbumItemViewHolder>(AlbumI
             binding.tvName.text = album.name
             binding.tvArtistName.text = album.artistName
 //            binding.tvId.text = album.id.toString() // Attention! Il faut toujours s'assurer qu'on assigne une String.
+            binding.lyt.setOnClickListener {
+                val intent: Intent = Intent(binding.root.context, DetailActivity::class.java)
+                // On ajoute le nom de l'élément à l'intent
+                intent.putExtra("monExtra", album)
+                // Démarrer l'activité SecondActivity
+                binding.root.context.startActivity(intent)
+            }
         }
     }
 
