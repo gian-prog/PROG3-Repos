@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context=".MainActivity">
 
     <TextView
@@ -21,5 +22,12 @@
         android:id="@+id/btnImg"
         android:text="Clique ici!"
         />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvVersionAdapter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:spanCount="1"
+        tools:listitem="@layout/version_item" />
 
 </LinearLayout>
