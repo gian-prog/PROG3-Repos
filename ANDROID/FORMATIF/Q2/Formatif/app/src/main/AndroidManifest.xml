@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Formatif"
         tools:targetApi="31">
         <activity
+            android:name=".DetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ImagesVersActivites"
             android:exported="false"
             android:theme="@style/Theme.Formatif" />
